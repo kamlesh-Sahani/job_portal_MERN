@@ -1,0 +1,89 @@
+@use '../../colors' as color;
+.apply{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 600px;
+
+    form{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        .item{
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            width: 90%;
+            justify-content: center;
+            align-items: center;
+
+            label{
+                font-weight: 500;
+                color: color.$textColor;
+                align-self: flex-start;
+            }
+            input{
+                width: 100%;
+                height: 50px;
+                border-radius: 6px;
+                border: none;
+
+                background-color: color.$bgColor;
+                font-weight: 500;
+                padding-left: 20px;
+                color: color.$textColor;
+                font-size: 17px;
+            }
+
+        }
+
+        button{
+            width: 90%;
+            height: 50px;
+            border-radius: 6px;
+            border: none;
+
+            background-color: color.$textColor;
+            color: color.$wColor;
+            font-weight: 500;
+            cursor: pointer;
+            font-size: 17px;
+        }
+    }
+
+    @media screen and (max-width:650px){
+        padding: 10px;
+        width: 400px;
+        form{
+            gap: 15px;
+
+            input{
+                font-size: 15px;
+                height: 40px;
+            }
+        }
+      
+    }
+
+    @media screen and (max-width:500px) {
+        width: 300px;
+        form{
+            gap: 10px;
+            input{
+                font-size: 11px;
+                height: 30px;
+         
+            }
+        button{
+            font-size: 14px;
+        }
+        }
+    }
+}

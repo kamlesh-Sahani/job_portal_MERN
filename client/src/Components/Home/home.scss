@@ -1,0 +1,216 @@
+@use "../../colors" as color;
+@mixin flexCode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 100px;
+  margin-top: 100px;
+  .home_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+
+    h1 {
+      font-size: 70px;
+      color: color.$textColor;
+      width: 70vw;
+
+      span {
+        color: color.$mainColor;
+      }
+    }
+
+    @media screen and (max-width: 950px) {
+      h1 {
+        font-size: 40px;
+      }
+    }
+  }
+
+  .search {
+    width: 70vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    svg {
+      position: absolute;
+      left: 20px;
+      font-size: 20px;
+    }
+    input {
+      width: 100%;
+      height: 60px;
+      border-radius: 7px;
+      padding-left: 50px;
+      border: none;
+      box-shadow: 1px 1px 2px 2px #eee;
+      font-size: 18px;
+    }
+  }
+
+  .sample {
+    display: flex;
+    gap: 30px;
+    width: 60vw;
+    flex-wrap: wrap;
+    align-self: flex-start;
+
+    button {
+      padding: 10px;
+      border: none;
+      outline: none;
+      font-weight: 600;
+      background-color: color.$mainLight;
+      color: color.$mainDark;
+      border-radius: 20px;
+      box-shadow: 1px 1px 2px 3px #eee;
+      cursor: pointer;
+    }
+  }
+
+  .home_main {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 50px;
+    padding: 0 10px;
+
+    .main_filter {
+      width: 26%;
+      gap: 10px;
+      display: flex;
+      flex-direction: column;
+      background-color: color.$wColor;
+      padding: 20px 30px;
+      box-shadow: 1px 1px 2px 2px #eee;
+      border-radius: 3px;
+
+      .filters {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        .filter {
+          display: flex;
+          gap: 10px;
+          flex-direction: column;
+
+          h3 {
+            color: color.$textColor;
+          }
+          .filter_item {
+            display: flex;
+            gap: 10px;
+            cursor: pointer;
+            font-weight: 500;
+            color: color.$textColor;
+
+            input {
+              height: 16px;
+              width: 16px;
+            }
+          }
+        }
+      }
+
+      @media screen and (max-width: 990px) {
+          display: none;
+        
+      }
+    }
+
+    .main_jobs {
+      width: 66%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: -30px;
+   
+      .jobs_heading {
+        p {
+          color: color.$textColor;
+          font-weight: 500;
+          span {
+            font-weight: 600;
+          }
+        }
+      }
+
+      .jobs_box {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 17px;
+      }
+    }
+
+    @media screen and (max-width: 1200px) {
+      width: 93vw;
+      padding: 5px;
+      gap: 10px;
+      .main_filter {
+        width: 20%;
+      }
+      .main_jobs {
+        width: 80%;
+
+        .jobs_box {
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+
+    @media screen and (max-width: 990px) {
+        width: 100vw;
+        .jobs_heading{
+            p{
+                margin-left:40px;
+            }
+        }
+      .main_jobs {
+        width: 100%;
+      }
+    }
+  }
+
+  .pagination{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+    button{
+      height: 60px;
+      width: 60px;
+      cursor: pointer;
+      background-color: color.$wColor;
+      font-size: 20px;
+      font-weight: 600;
+      color: color.$mainDark;
+      border: 1px solid rgb(168, 168, 168);
+      box-shadow: 1px 1px 2px 2px #e1e1e1;
+    }
+    .active{
+      background-color: color.$mainColor;
+      color: color.$wColor;
+    }
+  }
+
+  .null_jobs{
+    color: color.$mainDark;
+    border-bottom: 2px solid color.$textColor;
+  }
+}

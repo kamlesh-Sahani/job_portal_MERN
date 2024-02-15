@@ -1,0 +1,41 @@
+@use '../../colors' as color;
+.companyLogo{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    .logo_icon{
+        margin: 10px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.4s;
+        filter: grayscale(1);
+        gap: 3px;
+        span{
+            color: color.$textColor;
+          opacity: 0;
+        font-weight: 500;
+        }
+        img{
+            height: 100px;
+            width: 100px;
+            border-radius: 100%;
+            object-fit: cover;
+            cursor: pointer;
+         
+        }
+
+        
+        &:hover{
+            transition: all 0.4s;
+            transform: translateY(-17px);
+            filter: grayscale(0);
+            span{
+                opacity: 1;
+            }
+        }
+    }
+}

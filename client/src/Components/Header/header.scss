@@ -1,0 +1,234 @@
+@use "../../colors" as color;
+.header {
+  width: 90%;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: color.$wColor;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 8px;
+  box-shadow: 1px 1px 3px 2px #eee;
+  position: absolute;
+  z-index: 9;
+  .logo {
+    h1 {
+      font-size: 20px;
+
+      color: color.$mainColor;
+
+      span {
+        color: #0731b1;
+      }
+    }
+  }
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+
+    button {
+      height: 35px;
+      width: 120px;
+      border-radius: 7px;
+      background-color: color.$wColor;
+      color: color.$textColor;
+      transition: all 0.4s;
+      cursor: pointer;
+
+      font-size: 16px;
+    }
+    .active {
+      color: color.$wColor;
+      background-color: color.$textColor;
+      transition: all 0.4s;
+      &:hover {
+        background-color: color.$wColor;
+        color: color.$textColor;
+        transition: all 0.4s;
+      }
+    }
+  }
+  .bar {
+    display: none;
+    position: absolute;
+    right: 10px;
+  }
+  .sideBar {
+    display: none;
+
+    .sideBar_btn {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+
+      position: absolute;
+      top: 60px;
+      right: 10px;
+
+      button {
+        height: 40px;
+        width: 50vw;
+        border-radius: 4px;
+        background-color: color.$textColor;
+        color: #fff;
+        box-shadow: 1px 1px 2px 2px #efefef;
+        border: none;
+        font-size: 19px;
+      }
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .btn {
+      display: none;
+    }
+    .bar {
+      display: block;
+    }
+
+    .sideBar {
+      display: block;
+    }
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      color: color.$textColor;
+      margin: 0px 20px;
+      transition: all 0.4s;
+      font-weight: 500;
+      &:hover {
+        transition: all 0.4s;
+        color: color.$mainDark;
+        border-bottom: 1px solid black;
+      }
+    }
+
+    @media screen and (max-width: 1000px) {
+      a {
+        margin: 0 10px;
+      }
+    }
+
+    @media screen and (max-width: 810px) {
+      display: none;
+    }
+  }
+
+  .profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+
+    img {
+      height: 50px;
+      width: 50px;
+      object-fit: cover;
+    }
+    .text {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+
+      h4 {
+        font-weight: 500;
+      }
+      p {
+        color: color.$mainColor;
+        font-weight: 500;
+      }
+    }
+    @media screen and (max-width: 810px) {
+      display: none;
+    }
+  }
+
+  //mobile version
+  .sideBox {
+    height: 90vh;
+    width: 90%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: color.$wColor;
+    z-index: 10;
+
+    svg {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      font-size: 20px;
+    }
+
+    .bar_sideBar {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+      margin-top: 50px;
+
+      .bar_links {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+
+        a {
+          text-decoration: none;
+          color: color.$textColor;
+          font-weight: 500;
+        }
+      }
+      .bar_profile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 7px;
+        cursor: pointer;
+        flex-direction: column;
+
+        img {
+          height: 50px;
+          width: 50px;
+          object-fit: cover;
+        }
+        .text {
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          gap: 1px;
+
+          h4 {
+            font-weight: 500;
+          }
+          p {
+            color: color.$mainColor;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+
+  .sideBarIcon{
+    display: none;
+    font-size: 20px;
+    @media screen and (max-width:810px) {
+        display: block;
+    }
+  }
+}

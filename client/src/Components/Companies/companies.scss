@@ -1,0 +1,100 @@
+@use '../../colors.scss' as color;
+.company{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 180px;
+    width: 100%;
+    a{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        .company_card{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            width: 90%;
+            padding: 6px 20px;
+            background-color: color.$wColor;
+            border-radius: 8px;
+            box-shadow: 1px 1px 3px 2px #eee;
+            transition: all 0.4s;
+            &:hover{
+                transform: translateX(10px);
+                transition: all 0.4s;
+            }
+            .card_left
+            {
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+                align-items: center;
+                img{
+                    height: 80px;
+                    width: 80px;
+                    object-fit: cover;
+        
+                }
+    
+                .name{
+                    display: flex;
+                flex-direction: column;
+                gap: 5px;
+    
+                p{
+                    color: color.$mainDark;
+                    font-weight: 500;
+    
+                }
+                }
+         
+            }
+    
+    
+            .jobs{
+                display: flex;
+                flex-direction: column;
+                gap: 3px;
+                justify-content: center;
+                align-items: center;
+    
+                h3{
+                    color: color.$mainColor;
+    
+                }
+                p{
+                    font-weight: 500;
+                }
+            }
+        
+    
+    
+    
+        @media screen and (max-width:600px) {
+            .card_left{
+                gap: 4px;
+                img{
+                    height: 50px;
+                    width: 50px;
+                }
+                .name{
+                    gap: 1px;
+                    font-size: 15px;
+                }
+            }
+    
+            h3{
+                font-size: 15px;
+            }
+            .jobs{
+                font-size: 15px;
+            }
+        }
+    }
+    }
+  
+}

@@ -1,0 +1,89 @@
+@use "../../colors.scss" as color;
+.createJob {
+  margin-top: 100px;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  form {
+    background-color: color.$wColor;
+    width: 90%;
+
+    background-color: color.$wColor;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 7px;
+
+    .box {
+      width: 45%;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin: 15px;
+      label {
+        font-weight: 500;
+        color: color.$textColor;
+        font-size: 17px;
+        margin-left: 10px;
+      }
+
+      input {
+        width: 100%;
+        height: 50px;
+        border-radius: 7px;
+        border: none;
+        background-color: color.$bgColor;
+        padding-left: 20px;
+        font-size: 16px;
+      }
+
+      .job_dec {
+        resize: none;
+        width: 100%;
+        height: 130px;
+        border-radius: 7px;
+        border: none;
+        background-color: color.$bgColor;
+        padding: 20px;
+        font-size: 18px;
+      }
+    }
+    button {
+      width: 100%;
+      height: 50px;
+      border-radius: 7px;
+      background-color: color.$textColor;
+      color: color.$wColor;
+      cursor: pointer;
+      font-size: 18px;
+      margin: 15px auto;
+      transition: all 0.4s;
+
+      &:hover{
+        transition: all 0.4s ease-out;
+        color: color.$textColor;
+        background-color: color.$wColor;
+      }
+    }
+  }
+
+
+  @media screen and (max-width:800px) {
+    padding: 10px;
+    form{
+        align-items: center;
+        justify-content: center;
+    width:100%;
+
+    padding: 7px;
+        .box{
+            width: 100%;
+            margin: 10px;
+        }
+    }
+  }
+}

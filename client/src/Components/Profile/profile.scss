@@ -1,0 +1,231 @@
+@use '../../colors' as color;
+.userProfile{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content:center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+
+    .userProfile_box{
+        width: 80%;
+        padding: 36px 30px;
+        background-color: color.$wColor;
+        border-radius: 6px;
+        box-shadow: 1px 1px 2px 2px #eee;
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        gap: 30px;
+        position: relative;
+        .userProfile_btn{
+            .logout_user{
+                position: absolute;
+                left: 4px;
+                top: 3px;
+                border: none;
+                font-weight: 600;
+                background-color: color.$mainDark;
+                color: color.$wColor;
+                font-size: 15px;
+                height: 30px;
+                width: 120px;
+                cursor: pointer;
+                border-radius: 10px;
+            }
+        }
+        .profile_head{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+    
+            img{
+                height: 140px;
+                width: 140px;
+                object-fit: cover;
+                cursor: pointer;
+
+                &:hover{
+                    opacity: 0.9;
+                }
+            }
+    
+            .head_about{
+                width: 60%;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+    
+                justify-content: center;
+                align-items: center;
+    
+                div{
+                    display: flex;
+                    justify-items: center;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                
+    
+                    h4{
+                    font-weight: 500;
+                    font-size: 18px;
+
+                    }
+                    p{
+                        color: color.$mainColor;
+                        font-weight: 500;
+                        font-size: 18px;
+                        &:hover{
+                            opacity: 0.8;
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+            }
+
+            
+            @media screen and (max-width:800px) {
+                    img{
+                        height: 100px;
+                        width: 100px;
+                    }
+
+                    .head_about{
+                        width: 70%;
+
+
+                        div{
+                            h4{
+                                font-size: 16px;
+                            }
+                            p{
+                                font-size: 16px;
+                            }
+                        }
+                    }
+            }
+
+
+            @media screen and (max-width:620px) {
+                img{
+                    height: 70px;
+                    width: 70px;
+                }
+
+                .head_about{
+                    width: 70%;
+
+
+                    div{
+                        h4{
+                            font-size: 14px;
+                        }
+                        p{
+                            font-size: 14px;
+                        }
+                    }
+                }
+        }
+
+        @media screen and (max-width:540px) {
+            flex-direction: column;
+            gap: 20px;
+
+            img{
+                height: 90px;
+                width: 90px;
+            }
+
+            .head_about{
+                width: 100%;
+
+
+                div{
+                    h4{
+                        font-size: 14px;
+                    }
+                    p{
+                        font-size: 14px;
+                    }
+                }
+            }
+    }
+        }
+
+
+        .profile_mid{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            p{
+                font-weight: 400;
+                word-spacing: 2px;
+                line-height: 20px;
+                color: color.$gColor;
+
+            }
+        }
+
+
+        .profile_bottom{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            
+
+            .company_post{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+
+
+    }
+
+    
+    .edit_box{
+        position: absolute;
+        top: 2px;
+        right:2px;
+     
+       button{
+        font-weight: 600;
+        background-color: color.$mainDark;
+        color: color.$wColor;
+        font-size: 15px;
+        height: 30px;
+        width: 120px;
+        cursor: pointer;
+        border-radius: 10px;
+       }
+    }
+   
+  
+    @media screen and (max-width:540px) {
+        padding: 5px;
+        .userProfile_box{
+            width: 100%;
+            padding: 20px 10px ;
+
+            .edit_box{
+                button{
+                    font-size: 15px;
+                    width: 100px;
+                }
+            }
+        }
+     
+    }
+   
+}
