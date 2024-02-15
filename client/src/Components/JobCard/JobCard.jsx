@@ -38,7 +38,7 @@ const JobCard = ({
       setDifDays(days);
     }
   }, [postAt, currentDateAndTime]);
-  
+
 
   return (
     <Link to={`/job/${jobId}`}>

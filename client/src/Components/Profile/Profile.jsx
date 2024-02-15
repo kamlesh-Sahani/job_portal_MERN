@@ -28,7 +28,7 @@ const Profile = () => {
         dispatch(fetchUserMe());
       }
     }
-  }, [id, dispatch, logoutData, logoutLoading]);
+  }, [id, logoutData, logoutLoading]);
 
   return (
     <>

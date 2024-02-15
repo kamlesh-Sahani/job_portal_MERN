@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# Job Portal Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A comprehensive Job Portal website designed to connect employers with potential candidates. This platform facilitates job postings by employers and enables job seekers to explore, filter, and apply for available positions.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+  - [Configuration](#configuration)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Welcome to our Job Portal Website! This platform serves as a bridge between employers looking to fill job openings and job seekers in search of exciting career opportunities. Our user-friendly interface ensures a seamless experience for both employers and job seekers.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+Explore the key features that make our Job Portal Website stand out:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Job Posting by Employers**: Employers can easily post job openings, providing detailed information about the positions available.
 
-### `npm run build`
+- **Job Search and Filtering for Job Seekers**: Job seekers can efficiently search for jobs based on various criteria and apply filters to find the most relevant opportunities.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Application Submission for Job Seekers**: A straightforward application process for job seekers to apply for their desired positions directly through the platform.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **User Authentication for Employers and Job Seekers**: Secure user authentication ensures a trustworthy environment for both employers and job seekers.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Responsive Design**: The website is designed to be accessible and user-friendly across various devices, ensuring a seamless experience for all users.
 
-### `npm run eject`
+## Technologies Used
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Our Job Portal Website is built using the following technologies and frameworks:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **MongoDB**: NoSQL database for efficient data storage.
+  
+- **Express.js**: Backend framework for building robust APIs.
+  
+- **React**: Frontend library for creating dynamic user interfaces.
+  
+- **Node.js**: JavaScript runtime for server-side development.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Redux**: State management library for handling application state in a predictable way.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Installation
 
-## Learn More
+Follow these simple steps to set up the Job Portal Website on your local machine:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Clone the repository: `git clone https://github.com/kamlesh-Sahani/job_portal_MERN.git`
+2. Navigate to the project directory: `cd client`
+3. Install client dependencies: `npm install`
+4. Navigate back to the root directory: `cd ..`
+5. Install server dependencies: `npm install`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Configuration
 
-### Code Splitting
+Create a `.env` file in the root of your project and add the following environment variables:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```env
+DB_URL=your_database_url
+JWT_SECRET=your_jwt_secret

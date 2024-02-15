@@ -28,5 +28,5 @@ const Store = configureStore({
     }
 });
 
-export const BASE_URL = "https://job-back2.onrender.com";
+export const BASE_URL = "https://job-portal-server-ztpf.onrender.com";
 export default Store;

@@ -49,7 +49,7 @@ const Home = () => {
       "Backend Developer",
       "Full Stack Developer",
     ],
-    "Job-Type": ["All", "Full-Time", "Part-time", "Freelance", "Intern"],
+    "Job-Type": ["All", "Full Time", "Part time", "Freelance", "Intern"],
     Experience: ["All", "Under 1 year", "1-2 Year", "2-6 Year", "Over 6 Year"],
     Location: ["All", "India", "Nepal", "America", "London", "Canada"],
     Salary: ["All", "Any", "50k", "100k", "200k", "500k", "1000k"],
