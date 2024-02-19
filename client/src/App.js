@@ -14,6 +14,7 @@ import { fetchAllUser } from './Redux/Slices/User/getAllUser';
 import Profile from './Components/Profile/Profile';
 import ProfileEdit from './Components/ProfileEdit/ProfileEdit';
 import About from './Components/About/About';
+import Loader from './Components/Loader/Loader';
 const App = () => {
   const dispatch = useDispatch();
   const {data } = useSelector((state) => state.userMe);
@@ -41,6 +42,7 @@ const App = () => {
 
         <Route path='/edit/:id' element={data && data.user ?<ProfileEdit />:<LoginAndSignup />} />
         <Route path='/about' element={<About />} />
+        <Route path='/loader' element={<Loader />} />
       </Routes>
       <Footer />
     </Router>

@@ -3,6 +3,7 @@ import "./companies.scss";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { BASE_URL } from "../../Redux/Store";
+import Loader from "../Loader/Loader";
 const CompanyCard = ({
   profileImg,
   name,
@@ -31,10 +32,11 @@ const CompanyCard = ({
   </Link>
 );
 const Companies = () => {
-  const { data } = useSelector((state) => state.allUser);
+  const { data,isLoading } = useSelector((state) => state.allUser);
   return (
     <div className="company">
-      {data &&
+      {isLoading?<Loader/>:
+      data &&
         data.users &&
         data.users.map((user) => {
           if (user.role === "Employer") {

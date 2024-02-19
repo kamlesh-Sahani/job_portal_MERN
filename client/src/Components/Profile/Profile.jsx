@@ -8,6 +8,7 @@ import { Link, Navigate } from "react-router-dom";
 import { BASE_URL } from "../../Redux/Store";
 import { fetchLogoutUser } from "../../Redux/Slices/User/logoutUser";
 import { fetchUserMe } from "../../Redux/Slices/User/loadUser";
+import Loader from "../Loader/Loader";
 
 const Profile = () => {
   const { id } = useParams();
@@ -31,14 +32,11 @@ const Profile = () => {
   }, [id, logoutData, logoutLoading]);
 
   return (
-    <>
-      {isLoading ? (
-        "Loading"
-      ) : (
+  
         <div className="userProfile">
           {logoutData && logoutData.success && <Navigate to={"/"} />}
           {isLoading ? (
-            ""
+            <Loader />
           ) : (
             <div className="userProfile_box">
               <div className="userProfile_btn">
@@ -126,8 +124,6 @@ const Profile = () => {
             </div>
           )}
         </div>
-      )}
-    </>
   );
 };
 

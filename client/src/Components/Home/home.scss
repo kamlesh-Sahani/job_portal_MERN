@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 100px;
+  gap: 80px;
   margin-top: 100px;
   .home_header {
     display: flex;
@@ -82,9 +82,90 @@
     display: flex;
     gap: 20px;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 30px;
     padding: 0 10px;
+    position: relative;
+    .main_filter_res{
+     
+      width: 100%;
+      gap: 10px;
+      display: flex;
+      background-color: color.$wColor;
+      padding: 20px 30px;
+      box-shadow: 1px 1px 2px 2px #eee;
+      border-radius: 3px;
+      position: absolute;
+      left: 0;
+      top: 14px;
+      z-index: 9;
 
+      display: none;
+
+      
+
+      .filters {
+        margin-top: 30px;
+        display: flex;
+        gap: 30px;
+        overflow-x: auto;
+
+        .filter {
+          display: flex;
+          gap: 13px;
+          flex-direction: column;
+
+          .line {
+            height: 1px;
+            width: 90%;
+            background-color: rgb(216, 216, 216);
+          }
+
+          h3 {
+            color: color.$textColor;
+            cursor: pointer;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            border-radius: 6px;
+            width:150px;
+            position: relative;
+            svg {
+              position: absolute;
+              right: 10px;
+            }
+            &:hover {
+              background-color: #eee;
+            }
+          }
+          .filter_item_box {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-left: 20px;
+            margin-bottom: 10px;
+            .filter_item {
+              display: flex;
+              gap: 10px;
+              cursor: pointer;
+              font-weight: 500;
+              color: color.$textColor;
+
+              input {
+                height: 16px;
+                width: 16px;
+              }
+            }
+          }
+        }
+      }
+
+      @media screen and (max-width: 990px) {
+        display: block;
+      }
+
+
+    }
     .main_filter {
       width: 26%;
       gap: 10px;
@@ -99,34 +180,61 @@
         margin-top: 30px;
         display: flex;
         flex-direction: column;
-        gap: 30px;
 
         .filter {
           display: flex;
-          gap: 10px;
+          gap: 13px;
           flex-direction: column;
+
+          .line {
+            height: 1px;
+            width: 90%;
+            background-color: rgb(216, 216, 216);
+          }
 
           h3 {
             color: color.$textColor;
-          }
-          .filter_item {
-            display: flex;
-            gap: 10px;
             cursor: pointer;
-            font-weight: 500;
-            color: color.$textColor;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            border-radius: 6px;
+            width: 90%;
+            position: relative;
 
-            input {
-              height: 16px;
-              width: 16px;
+            svg {
+              position: absolute;
+              right: 30px;
+            }
+            &:hover {
+              background-color: #eee;
+            }
+          }
+          .filter_item_box {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-left: 20px;
+            margin-bottom: 10px;
+            .filter_item {
+              display: flex;
+              gap: 10px;
+              cursor: pointer;
+              font-weight: 500;
+              color: color.$textColor;
+
+              input {
+                height: 16px;
+                width: 16px;
+              }
             }
           }
         }
       }
 
       @media screen and (max-width: 990px) {
-          display: none;
-        
+        display: none;
       }
     }
 
@@ -136,8 +244,37 @@
       flex-direction: column;
       gap: 15px;
       margin-top: -30px;
-   
+
       .jobs_heading {
+        display: flex;
+        gap: 40px;
+        padding-left: 40px;
+        .filterRes {
+          display: flex;
+          gap: 8px;
+          cursor: pointer;
+          display: none;
+
+          .filterSvg{
+            position: relative;
+            span{
+              position: absolute;
+              top: -7px;
+              right: -1px;
+        
+              font-weight: 600;
+              color: color.$mainColor;
+            }
+            svg {
+              font-size: 24px;
+            }
+          }
+     
+
+          @media screen and (max-width: 990px) {
+            display: inline-flex;
+          }
+        }
         p {
           color: color.$textColor;
           font-weight: 500;
@@ -174,25 +311,25 @@
     }
 
     @media screen and (max-width: 990px) {
-        width: 100vw;
-        .jobs_heading{
-            p{
-                margin-left:40px;
-            }
+      width: 100vw;
+      .jobs_heading {
+        p {
+          margin-left: 40px;
         }
+      }
       .main_jobs {
         width: 100%;
       }
     }
   }
 
-  .pagination{
+  .pagination {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     margin-top: 40px;
-    button{
+    button {
       height: 60px;
       width: 60px;
       cursor: pointer;
@@ -203,14 +340,15 @@
       border: 1px solid rgb(168, 168, 168);
       box-shadow: 1px 1px 2px 2px #e1e1e1;
     }
-    .active{
+    .active {
       background-color: color.$mainColor;
       color: color.$wColor;
     }
   }
 
-  .null_jobs{
+  .null_jobs {
     color: color.$mainDark;
     border-bottom: 2px solid color.$textColor;
+    margin-top: 100px;
   }
 }

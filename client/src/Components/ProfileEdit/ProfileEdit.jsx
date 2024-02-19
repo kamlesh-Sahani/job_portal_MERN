@@ -40,7 +40,7 @@ const ProfileEdit = () => {
         dispatch(fetchUserMe())
       }
     }
-  }, [dispatch, isLoading,data]);
+  }, [isLoading,data]);
 
   return (
     <div className="profileEdit">
@@ -75,7 +75,7 @@ const ProfileEdit = () => {
             onChange={valueHandler}
           />
         </div>
-        <button type="submit">Update</button>
+        <button type="submit">{isLoading?" Wait ....":"Update"}</button>
       </form>
     </div>
   );
