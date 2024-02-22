@@ -115,7 +115,7 @@ const Profile = () => {
                           noOfVaccancies={job.noOfVaccancies}
                           owner={job.owner}
                           postAt={job.postAt}
-                          profileImg={job.profileImg}
+                          profileImg={data?.user?.profileImg}
                         />
                       ))}
                   </div>

@@ -21,6 +21,14 @@
     justify-content: center;
     align-items: center;
 
+    .loader_box{
+        width:490px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;    
+        position: absolute;
+    }
     .box{
         display: flex;
         justify-content: center;
@@ -29,6 +37,7 @@
         border-radius: 7px;
         background-color: color.$wColor;
         margin-top: 15%;
+        position: relative;
 
 
         width: 490px;
@@ -155,7 +164,9 @@
         }
     }
 
-
+input[type="text"]{
+    text-transform: capitalize;
+}
     
 
 

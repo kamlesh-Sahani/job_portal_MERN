@@ -17,6 +17,7 @@
     justify-content: space-between;
     padding: 20px;
     border-radius: 7px;
+    position: relative;
 
     .box {
       width: 45%;
@@ -63,11 +64,6 @@
       margin: 15px auto;
       transition: all 0.4s;
 
-      &:hover{
-        transition: all 0.4s ease-out;
-        color: color.$textColor;
-        background-color: color.$wColor;
-      }
     }
   }
 
@@ -85,5 +81,13 @@
             margin: 10px;
         }
     }
+  }
+
+  .l_box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
   }
 }

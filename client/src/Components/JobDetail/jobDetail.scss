@@ -254,12 +254,6 @@
       font-size: 15px;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.4s;
-      &:hover {
-        background-color: color.$wColor;
-        color: color.$textColor;
-        transition: all 0.4s;
-      }
     }
   }
 

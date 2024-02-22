@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./createjob.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchNewJob } from "../../Redux/Slices/Jobs/newJob";
+import Loader from "../Loader/Loader";
 const CreateJob = () => {
   const { isLoading, data } = useSelector((state) => state.newJob);
   const dispatch = useDispatch();
@@ -24,23 +25,21 @@ const CreateJob = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    const fetchCreateJob = async () => {
-      await dispatch(fetchNewJob(jobData));
-    };
-    fetchCreateJob();
-
+    dispatch(fetchNewJob(jobData));
   };
 
   useEffect(() => {
     if (!isLoading && data) {
       alert(data?.message);
-      setJobData({   jobTitle: "",
-      jobLocation: "",
-      jobDes: "",
-      skill: "",
-      salary: "",
-      jobType: "",
-      noOfVaccancies: "",})
+      setJobData({
+        jobTitle: "",
+        jobLocation: "",
+        jobDes: "",
+        skill: "",
+        salary: "",
+        jobType: "",
+        noOfVaccancies: "",
+      });
     }
   }, [isLoading, data]);
   return (
@@ -81,6 +80,7 @@ const CreateJob = () => {
             required
           />
         </div>
+       
         <div className="box">
           <label>No of Vaccancies</label>
           <input
@@ -128,8 +128,15 @@ const CreateJob = () => {
             required
           ></textarea>
         </div>
+        {isLoading ? (
+          <div className="l_box">
+            <Loader />
+          </div>
+        ) : (
+          ""
+        )}
 
-        <button type="submit">{isLoading ? "Upload.... "  : "Post Job"}</button>
+        <button type="submit">{isLoading ? "Upload.... " : "Post Job"}</button>
       </form>
     </div>
   );

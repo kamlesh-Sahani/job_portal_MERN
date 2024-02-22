@@ -97,7 +97,7 @@ const JobDetail = () => {
               </div>
               <div className="feature_btn">
                 <p>No of applicants</p>
-                <p>{data?.job?.noOfApplicants}</p>
+                <p>{data?.job?.noOfApplicants.length}</p>
               </div>
               <div className="feature_btn">
                 <p>No of vaccancies</p>
@@ -177,12 +177,10 @@ const JobDetail = () => {
                       noOfVaccancies={job.noOfVaccancies}
                       owner={job.owner}
                       postAt={job.postAt}
-                      profileImg={job.profileImg}
+                      profileImg={job?.owner?.profileImg}
                     />
                   );
                 })}
-
-              <JobCard />
             </div>
           </div>
 

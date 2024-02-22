@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import './applyCard.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchApplyJob } from "../../Redux/Slices/ApplyJob/apply";
+import Loader from "../Loader/Loader";
 
 const ApplyCard = ({ jobId }) => {
   const { isLoading, data } = useSelector((state) => state.applyJob);
@@ -31,9 +32,16 @@ const ApplyCard = ({ jobId }) => {
     if(!isLoading){
       if(data){
         alert(data.message)
+        setApplyData({
+          resume: '',
+          portfolio: '',
+          linkedin: '',
+          expectedSalary: '',
+          mobileNumber: ''
+        })
       }
     }
-  },[dispatch,data,isLoading])
+  },[data,isLoading])
   return (
     <div className="apply">
       <h1>Apply Job</h1>
@@ -46,6 +54,7 @@ const ApplyCard = ({ jobId }) => {
             placeholder="Resume link"
             name="resume"
             onChange={(e) => valueHandler(e)}
+            value={applyData.resume}
           />
         </div>
 
@@ -57,6 +66,7 @@ const ApplyCard = ({ jobId }) => {
             placeholder="Portfolio link"
             name="portfolio"
             onChange={(e) => valueHandler(e)}
+            value={applyData.portfolio}
           />
         </div>
 
@@ -68,6 +78,7 @@ const ApplyCard = ({ jobId }) => {
             placeholder=" Linkedin profile link"
             name="linkedin"
             onChange={(e) => valueHandler(e)}
+            value={applyData.linkedin}
           />
         </div>
 
@@ -79,6 +90,7 @@ const ApplyCard = ({ jobId }) => {
             placeholder="eg. 100k "
             name="expectedSalary"
             onChange={(e) => valueHandler(e)}
+            value={applyData.expectedSalary}
           />
         </div>
         <div className="item">
@@ -89,8 +101,15 @@ const ApplyCard = ({ jobId }) => {
             placeholder="eg. +9196677XXXXX"
             name="mobileNumber"
             onChange={(e) => valueHandler(e)}
+            value={applyData.mobileNumber}
           />
         </div>
+        {
+          isLoading?<div className="load_box">
+          <Loader />
+        </div>:""
+        }
+        
         <button type="submit">Submit</button>
       </form>
     </div>

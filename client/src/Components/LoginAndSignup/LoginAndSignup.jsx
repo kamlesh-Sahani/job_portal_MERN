@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchUserRegister } from "../../Redux/Slices/User/registerSlice";
 import { fetchLoginUser } from "../../Redux/Slices/User/loginSlice";
 import { fetchUserMe } from "../../Redux/Slices/User/loadUser";
+import Loader from "../Loader/Loader";
 const LoginAndSignup = () => {
   let { id } = useParams();
   if (id !== "login" && id !== "Signup") {
@@ -217,8 +218,13 @@ const LoginAndSignup = () => {
               ) : (
                 ""
               )}
-
               {renderInputTag()}
+              {
+                lLoading || rLoading ? <div className="loader_box">
+                <Loader />
+              </div>:""
+              }
+             
             </form>
           </div>
 
