@@ -6,6 +6,7 @@ import { fetchUserRegister } from "../../Redux/Slices/User/registerSlice";
 import { fetchLoginUser } from "../../Redux/Slices/User/loginSlice";
 import { fetchUserMe } from "../../Redux/Slices/User/loadUser";
 import Loader from "../Loader/Loader";
+import { Toaster, toast } from 'sonner'
 const LoginAndSignup = () => {
   let { id } = useParams();
   if (id !== "login" && id !== "Signup") {
@@ -140,13 +141,22 @@ const LoginAndSignup = () => {
   useEffect(() => {
     if (!lLoading) {
       if (loginData && loginData.message) {
-        alert(loginData.message);
+        if(loginData.success){
+          toast.success(loginData.message)
+        }else{
+          toast.error(loginData.message)
+        }
+
         dispatch(fetchUserMe());
       }
     }
     if (!rLoading) {
       if (registerData && registerData.message) {
-        alert(registerData.message);
+        if(registerData.success){
+          toast.success(registerData.message)
+        }else{
+          toast.error(registerData.message)
+        }
         dispatch(fetchUserMe());
       }
     }
@@ -155,6 +165,7 @@ const LoginAndSignup = () => {
 
   return (
     <>
+      <Toaster richColors  position="top-center"/>
       {(loginData?.success || registerData?.success) && (
         <Navigate to={"/"} replace={true}></Navigate>
       )}

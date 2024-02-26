@@ -3,7 +3,8 @@ import "./profileedit.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchUpadetUser } from "../../Redux/Slices/User/updateProfile";
-import { fetchUserMe } from '../../Redux/Slices/User/loadUser';
+import { fetchUserMe } from "../../Redux/Slices/User/loadUser";
+import { Toaster, toast } from "sonner";
 const ProfileEdit = () => {
   const { id } = useParams();
   const { isLoading, data } = useSelector((state) => state.upadetUser);
@@ -22,28 +23,32 @@ const ProfileEdit = () => {
     }));
   };
 
-
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(fetchUpadetUser({id,...updateData}));
+    dispatch(fetchUpadetUser({ id, ...updateData }));
   };
 
   useEffect(() => {
     if (!isLoading) {
       if (data) {
-        alert(data.message);
+        if (data.success) {
+          toast.success(data.message);
+        } else {
+          toast.error(data.message);
+        }
         setUpdateData({
           firstName: "",
           lastName: "",
           email: "",
         });
-        dispatch(fetchUserMe())
+        dispatch(fetchUserMe());
       }
     }
-  }, [isLoading,data]);
+  }, [isLoading, data]);
 
   return (
     <div className="profileEdit">
+      <Toaster position="top-center" richColors />
       <form onSubmit={submitHandler} encType="multipart/form-data">
         <div className="edit_item">
           <label>First Name</label>
@@ -75,7 +80,7 @@ const ProfileEdit = () => {
             onChange={valueHandler}
           />
         </div>
-        <button type="submit">{isLoading?" Wait ....":"Update"}</button>
+        <button type="submit">{isLoading ? " Wait ...." : "Update"}</button>
       </form>
     </div>
   );

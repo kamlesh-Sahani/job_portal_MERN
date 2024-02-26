@@ -3,6 +3,7 @@ import './applyCard.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchApplyJob } from "../../Redux/Slices/ApplyJob/apply";
 import Loader from "../Loader/Loader";
+import { Toaster, toast } from 'sonner';
 
 const ApplyCard = ({ jobId }) => {
   const { isLoading, data } = useSelector((state) => state.applyJob);
@@ -31,7 +32,11 @@ const ApplyCard = ({ jobId }) => {
   useEffect(()=>{
     if(!isLoading){
       if(data){
-        alert(data.message)
+        if(data.success){
+          toast.success(data.message);
+        }else{
+          toast.error(data.message);
+        }
         setApplyData({
           resume: '',
           portfolio: '',
@@ -44,6 +49,7 @@ const ApplyCard = ({ jobId }) => {
   },[data,isLoading])
   return (
     <div className="apply">
+      <Toaster position="top-center"  richColors  />
       <h1>Apply Job</h1>
       <form onSubmit={(e) => submitHandler(e)}>
         <div className="item">

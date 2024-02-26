@@ -137,6 +137,7 @@ const Home = () => {
   }, [page, filterObj, keyword]);
   return (
     <>
+
       <div className="home">
         {/* home Header */}
         <div className="home_header">

@@ -3,6 +3,7 @@ import "./createjob.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchNewJob } from "../../Redux/Slices/Jobs/newJob";
 import Loader from "../Loader/Loader";
+import { Toaster, toast } from 'sonner';
 const CreateJob = () => {
   const { isLoading, data } = useSelector((state) => state.newJob);
   const dispatch = useDispatch();
@@ -30,7 +31,12 @@ const CreateJob = () => {
 
   useEffect(() => {
     if (!isLoading && data) {
-      alert(data?.message);
+      if(data.success){
+        toast.success(data.message);
+      }
+      else{
+        toast.error(data.message);
+      }
       setJobData({
         jobTitle: "",
         jobLocation: "",
@@ -44,6 +50,7 @@ const CreateJob = () => {
   }, [isLoading, data]);
   return (
     <div className="createJob">
+        <Toaster position="top-center"  richColors  />
       <form onSubmit={(e) => submitHandler(e)}>
         <div className="box">
           <label>Job Title</label>
